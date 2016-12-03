@@ -7,6 +7,9 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <evosuiteVersion>1.0.3</evosuiteVersion>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -15,23 +18,55 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.evosuite</groupId>
+            <artifactId>evosuite-standalone-runtime</artifactId>
+            <version>${evosuiteVersion}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.evosuite.plugins</groupId>
+                    <artifactId>evosuite-maven-plugin</artifactId>
+                    <version>${evosuiteVersion}</version>
+                    <executions><execution>
+                        <goals> <goal> prepare </goal> </goals>
+                        <phase> process-test-classes </phase>
+                    </execution></executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
+            <!--<plugin>-->
+                <!--<groupId>org.pitest</groupId>-->
+                <!--<artifactId>pitest-maven</artifactId>-->
+                <!--<version>LATEST</version>-->
+                <!--<configuration>-->
+                    <!--<targetClasses>-->
+                        <!--<param>org.oredev.example.*</param>-->
+                    <!--</targetClasses>-->
+                    <!--<targetTests>-->
+                        <!--<param>org.oredev.example.*</param>-->
+                    <!--</targetTests>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+
             <plugin>
-                <groupId>org.pitest</groupId>
-                <artifactId>pitest-maven</artifactId>
-                <version>LATEST</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <inherited>true</inherited>
                 <configuration>
-                    <targetClasses>
-                        <param>org.oredev.example.*</param>
-                    </targetClasses>
-                    <targetTests>
-                        <param>org.oredev.example.*</param>
-                    </targetTests>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 

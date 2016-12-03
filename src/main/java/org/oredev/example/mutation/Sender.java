@@ -1,4 +1,4 @@
-package org.oredev.example;
+package org.oredev.example.mutation;
 
 /**
  * Created by arcuri82 on 11/4/2016.

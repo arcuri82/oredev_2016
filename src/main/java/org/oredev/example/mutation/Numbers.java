@@ -1,4 +1,4 @@
-package org.oredev.example;
+package org.oredev.example.mutation;
 
 public class Numbers {
 

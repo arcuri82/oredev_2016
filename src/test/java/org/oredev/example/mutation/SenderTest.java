@@ -1,6 +1,7 @@
-package org.oredev.example;
+package org.oredev.example.mutation;
 
 import org.junit.Test;
+import org.oredev.example.mutation.Sender;
 
 import static org.junit.Assert.*;
 

@@ -1,8 +1,7 @@
-package org.oredev.example;
+package org.oredev.example.mutation;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import org.oredev.example.mutation.Numbers;
 
 /**
  * Created by arcuri82 on 11/4/2016.
